@@ -38,8 +38,8 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 
 
-app.listen(4000, () => {
-    console.log(`server started at http://localhost:4000/`)
+app.listen(process.env.PORT, () => {
+    console.log(`server started at http://localhost:${process.env.PORT}/`)
 })
 
 
