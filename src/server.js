@@ -41,7 +41,18 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
+import cron from "node-cron";
+import axios from "axios";
 
+// run every 14 minutes (Render free plan sleeps after 15m idle)
+cron.schedule("*/14 * * * *", async () => {
+  try {
+    await axios.get("https://node-js-task-1-jaia.onrender.com/api"); 
+    console.log("Pinged server to keep alive");
+  } catch (err) {
+    console.error("Ping failed", err.message);
+  }
+});
 
 app.listen(process.env.PORT, () => {
     console.log(`server started at http://localhost:${process.env.PORT}/`)
