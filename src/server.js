@@ -25,10 +25,15 @@ const swaggerOptions = {
       description: "User Registration, Login, and Password Reset APIs",
     },
     servers: [
-      {
-        url: process.env.BASE_URL,
-      },
-    ],
+          {
+            url: 'http://localhost:4000', // Local development URL
+            description: 'Local server',
+          },
+          {
+            url: 'https://node-js-task-1-jaia.onrender.com', // Your Render app URL
+            description: 'Live server on Render',
+          },
+        ],
   },
   apis: ["./src/router.js"], // Path to your API routes
 };
