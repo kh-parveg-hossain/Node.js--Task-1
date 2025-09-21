@@ -30,12 +30,12 @@ const swaggerOptions = {
             description: 'Local server',
           },
           {
-            url: 'https://node-js-task-1-jaia.onrender.com', // Your Render app URL
+            url: 'https', // Your Render app URL
             description: 'Live server on Render',
           },
         ],
   },
-  apis: ["./src/router.js"], // Path to your API routes
+  apis: ["./src/*js"], // Path to your API routes
 };
 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
