@@ -30,7 +30,7 @@ const swaggerOptions = {
             description: 'Local server',
           },
           {
-            url: 'https://node-js-task-1-jaia.onrender.com', // Your Render app URL
+            url: 'https://node-js-task-1-jaia.onrender.com/api-docs', // Your Render app URL
             description: 'Live server on Render',
           },
         ],
